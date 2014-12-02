@@ -7,7 +7,7 @@ module.exports = Backbone.Collection.extend({
 	importarMembros: function() {
 		this.fetch();
 
-		var oldMembros = _.clone(this.toJSON());
+		var cache = _.clone(this.toJSON());
 
 		_.each(_.clone(this.models), function(model) {
 			model.destroy();
@@ -19,7 +19,7 @@ module.exports = Backbone.Collection.extend({
 			dataType: 'JSON'
 		}).then(function(res) {
 			_(res).each(function(membro) {
-				var old = _(oldMembros).findWhere({id: membro.id});
+				var old = _(cache).findWhere({id: membro.id});
 				if(old && membro.id === old.id) {
 					membro.ativo = old.ativo;
 				}
