@@ -31,7 +31,6 @@
 		padding-left: 5px;
 		padding-top: 5px;
 		padding-bottom: 5px;
-		/*padding: 5px;*/
 	}
 	.col-xs-9 {
 		margin-top: 7px;

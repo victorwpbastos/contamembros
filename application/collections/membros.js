@@ -22,5 +22,11 @@ module.exports = Backbone.Collection.extend({
 
 			alert(this.length + ' membros importados!');
 		}.bind(this));
+	},
+	comparator: function(ma, mb) {
+		if(ma.get('ativo') === mb.get('ativo')) {
+			return ma.get('nome') > mb.get('nome') ? 1 : -1;
+		}
+		return ma.get('ativo') < mb.get('ativo') ? 1 : -1;
 	}
 });

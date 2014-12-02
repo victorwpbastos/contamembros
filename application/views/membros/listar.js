@@ -7,6 +7,17 @@ module.exports = require('boiler').View.extend({
 
 		membros.fetch();
 
-		this.set('membros', membros.toJSON());
+		this.set('membros', membros);
+	},
+	toggleAtivo: function() {
+		this.event.original.preventDefault();
+
+		var membro = this.event.context;
+
+		membro.set('ativo', !membro.get('ativo'));
+
+		membro.save();
+
+		this.get('membros').sort();
 	}
 });

@@ -1,9 +1,9 @@
 @import url('bootstrap.css');
-/*@import url('boiler.css');*/
 
 body {
 	font-family: Arial, sans-serif;
 	font-size: 14px;
+	margin-bottom: -15px;
 }
 
 body #main {
